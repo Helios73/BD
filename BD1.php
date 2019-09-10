@@ -8,9 +8,8 @@ $link = mysqli_connect('localhost','root','','quest');
 		exit();
 	}
 
-
- if (!($stmt = $mysqli->prepare("INSERT INTO users(id) VALUES (4)"))) {
-    echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+if (!$mysqli->query("INSERT INTO users VALUES (seven), (six), (nine)")) {
+    echo "Не удалось выполнитьnвставку: (" . $mysqli->errno . ") " . $mysqli->error;
 }
 ?>
 
