@@ -13,3 +13,22 @@ if (!$mysqli->query("INSERT INTO users VALUES (seven), (six), (nine)")) {
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BD zapros</title>
+</head>
+<body>
+
+<form action="insert.php" method="post">
+            Name: <input type="varchar" name="Name">
+            <br>
+            Phone: <input type="varchar" name="Phone">
+            <br>
+            <input type="submit" value="insert">
+            Email: <input type="varchar" name="email">
+
+</form>
+
+</body>
+</html>
