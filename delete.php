@@ -6,7 +6,7 @@ $link = mysqli_connect('localhost','root','','quest');
 		exit();
 	}
 if (!empty($_REQUEST['form_submit']) && $_REQUEST['form_submit'] == 'Y') {
-  $result = mysqli_query("DELETE FROM `users` WHERE Phone = two VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."')");
+  $result = mysqli_query("DELETE FROM `users` VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."') WHERE Phone = two");
   if ($result) {
       echo "Успех";
   } else {
