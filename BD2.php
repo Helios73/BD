@@ -8,13 +8,15 @@ $link = mysqli_connect('localhost','root','','quest');
 		exit();
 	}
 
-$result = mysqli_query("INSERT INTO `Users`(`Name`, `Phone`, `Email`) VALUES ('name','phone','email')");
-if ($result) {
-    echo "Успех";
+if (!empty($_REQUEST['form_submit']) && $_REQUEST['form_submit'] == 'Y') {
+
+  $result = mysqli_query("INSERT INTO `Users`(`Name`, `Phone`, `Email`) VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."')");
+  if ($result) {
+      echo "Успех";
+  } else {
+      echo "Неудача";
+  } 
 }
-else {
-    echo "Неудача";
-} 
 
 ?>
 <html>
@@ -23,8 +25,10 @@ else {
 </head>
 <body>
  <form method="POST" action="">
+  <input name="form_submit" type="hidden" value="Y"> 
   <input name="name" type="text">
-  <input name="text" type="text">
+  <input name="phone" type="text">
+  <input name="email" type="text">
   <input type="submit" value="Отправить">
  </form>
 </body>
