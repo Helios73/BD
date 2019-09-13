@@ -6,7 +6,7 @@ $link = mysqli_connect('localhost','root','','quest');
 		exit();
 	}
 if (!empty($_REQUEST['form_submit']) && $_REQUEST['form_submit'] == 'Y') {
-  $result = mysqli_query("UPDATE `users` SET `Name`,`Phone`,`Email` WHERE id=1 VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."')");
+  $result = mysqli_query("UPDATE `users` SET `Name`,`Phone`,`Email` VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."') WHERE `id` = 1");
   if ($result) {
       echo "Успех";
   } else {
