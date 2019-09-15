@@ -6,7 +6,7 @@ $link = mysqli_connect('localhost','root','','quest');
 		exit();
 	}
 if (!empty($_REQUEST['form_submit']) && $_REQUEST['form_submit'] == 'Y') {
-  $result = mysqli_query("SELECT * FROM `users` VALUES ('".$_REQUEST['name']."','".$_REQUEST['phone']."','".$_REQUEST['email']."') WHERE `Name` = One");
+  $result = mysqli_query("SELECT * FROM `users`);
   if ($result) {
       echo "Успех";
   } else {
